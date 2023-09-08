@@ -1,0 +1,72 @@
+$background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
+  url("../Images/backgroundRegister1.jpg");
+
+@mixin background($bg, $bg-size, $bg-pos) {
+  background: $bg;
+  background-size: $bg-size;
+  background-position: $bg-pos;
+}
+@mixin text(
+  $font-size,
+  $font-family,
+  $font-weight,
+  $color,
+  $text-align,
+  $text-shadow
+) {
+  font-size: $font-size;
+  font-family: $font-family;
+  font-weight: $font-weight;
+  color: $color;
+  text-align: $text-align;
+  text-shadow: $text-shadow;
+}
+
+@mixin dimensions($height, $width) {
+  height: $height;
+  width: $width;
+}
+
+.register {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  @include background($background, cover, center);
+}
+
+.register-form {
+  background-color: rgba(88, 116, 32, 0.666);
+  padding: 20px 45px 25px;
+  border-radius: 25px;
+}
+
+.header-register {
+  @include text(
+    2.5rem,
+    "Trebuchet MS" sans-serif,
+    bold,
+    white,
+    center,
+    2px 2px rgb(48, 64, 15)
+  );
+}
+
+.button-register {
+  @include dimensions(50%, 27.5rem);
+  @include text(
+    2rem,
+    -"Trebuchet MS" sans-serif,
+    bold,
+    white,
+    center,
+    2px 2px rgb(48, 64, 15)
+  );
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 1.2rem 0 0.33rem 0.33rem;
+  padding: 0.7rem;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: yellowgreen;
+}

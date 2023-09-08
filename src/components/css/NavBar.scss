@@ -1,0 +1,58 @@
+$bg-color: linear-gradient(to right, #7bd9b1, teal);
+@mixin text($font-size, $font-family, $font-weight, $color) {
+  font-size: $font-size;
+  font-family: $font-family;
+  color: $color;
+  text-decoration: none;
+  font-weight: $font-weight;
+}
+@mixin display($dipslay, $flex-direction) {
+  display: $dipslay;
+  flex-direction: $flex-direction;
+}
+@mixin dimensions($height, $width) {
+  height: $height;
+  width: $width;
+}
+
+.nav-bar {
+  background: teal;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 2rem;
+  padding: 0 1rem 0 0;
+  position: fixed;
+  @include dimensions(default, 100%);
+  @include display(flex, row);
+  z-index: 10;
+}
+
+.nav-img {
+  height: 4.5rem;
+}
+
+.nav-bar-ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  gap: 1rem;
+  @include display(flex, row);
+}
+
+.nav-bar-li:hover {
+  background-color: #29c1c1;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  padding: 0.25rem;
+  margin: 0 0.5rem;
+  @include dimensions(100%, default);
+  @include text(1.5rem, "Trebuchet MS" sans-serif, bold, white);
+}
+
+.logo-div {
+  background-color: #68d4a6;
+  @include display(flex, row);
+}
